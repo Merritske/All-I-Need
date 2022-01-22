@@ -15,8 +15,8 @@ section{
     flex-direction: row;
 }
 .een{
-    width: 200px;
-    height:200px;
+    width: 100px;
+    height:100px;
     background-color: blue;
     border: 15px solid white;
 
