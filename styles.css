@@ -1,0 +1,44 @@
+* {
+    background-color: green;
+    margin:10px;
+    padding:0;
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+section{
+    display:flex;
+    flex-direction: row;
+}
+.een{
+    width: 200px;
+    height:200px;
+    background-color: blue;
+    border: 15px solid white;
+
+}
+.twee{
+    width:200px;
+    height:200px;
+    background-color:red;
+    border: 15px dashed white;
+    
+    
+}
+p{
+    font-size: 36px;
+    text-align: center;
+
+}
+.tweekubussen{
+    width: 200px;
+    height:200px;
+    background-color: black;
+    border: 20px solid white;
+    float: right;
+    
+}
