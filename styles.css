@@ -17,20 +17,20 @@ section{
 .een{
     width: 200px;
     height:200px;
-    background-color: blue;
+    background-color: black;
     border: 15px solid white;
 
 }
 .twee{
-    width:200px;
-    height:200px;
+    width:100px;
+    height:100px;
     background-color:red;
     border: 15px dashed white;
     
     
 }
 p{
-    font-size: 36px;
+    font-size: 12px;
     text-align: center;
 
 }
