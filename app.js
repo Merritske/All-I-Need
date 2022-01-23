@@ -10,6 +10,8 @@ moveD.addEventListener("mousemove", function () {
 vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
     })
     function test(){
-      return legende.innerHTML = "REKEN"
+      return legende.innerHTML = "REKENSOM"
     }
     test();
+
+
