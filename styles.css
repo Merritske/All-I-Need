@@ -72,3 +72,40 @@ hr{
     transition: transform 9s;
     z-index: -1;
 }
+.reken{
+    font-size: 35px;
+    width: 1500px;
+    margin: 100px;
+}
+.reken input{
+    height: 70px;
+    width: 700px;
+    font-size: 30px;
+    background-color: transparent;
+    letter-spacing: 5px;
+}
+#username{
+    width: 100px;
+    height: 70px;
+    background-color: blue;
+    font-size: 30px;
+    border-radius: 10px;
+}
+#username:hover, #uitkomst:hover{
+    background-color: blueviolet;
+    box-shadow: 0 0 5px 5px chartreuse, 0 0 6px 6px grey;
+}
+.modal{
+    background-color: turquoise;
+    border: 3px solid grey;
+
+}
+#uitkomst{
+    height: 60px;
+    width: fit-content;
+    padding:10px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: blue;
+    border-radius: 10px;
+}
