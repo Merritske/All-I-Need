@@ -1,0 +1,23 @@
+@mixin text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 35px;
+    color: red;
+}
+@mixin Btn {
+    background-color: burlywood;
+    height: 70px;
+    width: 100px;
+}
+#userBtn{
+@include Btn;
+}
+@mixin borderA($color, $width){
+border: $width solid $color;
+}
+.een{
+    @include borderA(grey, 5px );
+
+}
+p{
+    @include text;
+}
