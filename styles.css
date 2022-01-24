@@ -84,18 +84,19 @@ hr{
     background-color: transparent;
     letter-spacing: 5px;
 }
-#username{
+#userBtn{
     width: 100px;
     height: 70px;
     background-color: blue;
     font-size: 30px;
     border-radius: 10px;
 }
-#username:hover, #uitkomst:hover{
+#userBtn:hover, #uitkomst:hover{
     background-color: blueviolet;
     box-shadow: 0 0 5px 5px chartreuse, 0 0 6px 6px grey;
 }
 .modal{
+    /* display: none; */
     background-color: turquoise;
     border: 3px solid grey;
 
@@ -118,7 +119,7 @@ table, th, td {
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    background-color:blueviolet ;
+    background-color:green ;
 }
 
 thead{

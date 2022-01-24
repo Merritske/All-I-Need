@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,97 +8,101 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <main>
-  
 
-    <section>
-        <div class="een">
-        <p>een twee drie</p>
-        </div>
-        <div class="twee">
-        deze is leeg?
-        </div>
-            </section>
-            <section>
-                <div class="een">
-              <p>een drie vijf</p>  
-                </div>
-                <div class="twee">
-                
-                </div>
-                    </section>
 
-                    <section>
-                        <div class="een">
-                        
-                        </div>
-                        <div class="twee">
-                        
-                        </div>
-                            </section>
+        <section>
+            <div class="een">
+                <p>een twee drie</p>
+            </div>
+            <div class="twee">
+                deze is leeg?
+            </div>
+        </section>
+        <section>
+            <div class="een">
+                <p>een drie vijf</p>
+            </div>
+            <div class="twee">
 
-</main> 
+            </div>
+        </section>
 
-        <div class="tweekubussen">
+        <section>
+            <div class="een">
 
-        </div>
-<div class="text">
-    <p> Kubussen zijn vormen in 3D, in 2D noemt dit een vierkant als alle zijden van de figuur gelijk zijn.</p>
+            </div>
+            <div class="twee">
+
+            </div>
+        </section>
+
+    </main>
+
+    <div class="tweekubussen">
+
     </div>
-<hr>
+    <div class="text">
+        <p> Kubussen zijn vormen in 3D, in 2D noemt dit een vierkant als alle zijden van de figuur gelijk zijn.</p>
+    </div>
+    <hr>
     <div class="move">
-        <div class="cirkel" >
+        <div class="cirkel">
         </div>
         <div class="vierkant">
         </div>
     </div>
-<hr>
-<div class="reken">
-    <fieldset>
-        <legend id="legende">
-Rekenmachine
-        </legend> 
-          <form >
-<input type="text" placeholder="give username">
-<button type="submit" id="username">Enter</button>
+    <hr>
+    <div class="reken">
+        <fieldset>
+            <legend id="legende">
+                Rekenmachine
+            </legend>
+            <form>
+                <input type="text" placeholder="give username" id="userInput">
+                <button type="submit" id="userBtn">Enter</button>
 
-<div class="modal">
-<div class="modalContent">
-<div class="modalHeader">
-    <span class="close">&times;</span>
-    <h2>Los de rekensom op</h2>
-</div>
-<div class="modalBody">
-    <div class="rekensom">5+2 = </div>
-    <input type="text" name="som" id="som">
-</div>
-<div class="modalFooter">
-    <button type="submit" id="uitkomst">CONTROLE</button>
-</div>
-</div>
-</div>
-</div>
-<!--Als de oplossing juist is alert/ als opl fout is alert met de rekensom en de oplossing-->
+                <div class="modal">
+                    <div class="modalContent">
+                        <div class="modalHeader">
+                            <span class="close">&times;</span>
+                            <h2>Los de rekensom op</h2>
+                        </div>
+                        <div class="modalBody">
+                            <div class="rekensom">5+7 =  </div>
+                            <input type="text" name="som" id="som">
+                        </div>
+                        <div class="modalFooter">
+                            <button type="submit" id="uitkomst" >CONTROLE</button>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    <!--Als de oplossing juist is alert de bal raak/ als opl fout is alert met de rekensom en de oplossing-->
     </form>
     </fieldset>
- <div class="lijst">
-     <table>
-         <thead>
-             <td>
-                 username
-             </td>
-         </thead>
-         <tbody>
-             <tr>
-             <th>1</th>
-             <td>rekensom</td>
-             <td>check</td>
-            </tr>
-         </tbody>
-     </table>
- </div>
+    <div class="lijst">
+        <table>
+            <thead>
+                <tr>
+                    <td id="username">
+                        username
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>1</th>
+                    <td>rekensom</td>
+                    <td>check</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>
