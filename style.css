@@ -1,16 +1,189 @@
 #userBtn {
   background-color: burlywood;
   height: 70px;
-  width: 100px;
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
-.een {
+#userBtn:hover, #uitkomst:hover {
+  background-color: palevioletred;
+  -webkit-box-shadow: 0 0 8px 5px grey;
+          box-shadow: 0 0 8px 5px grey;
+}
+
+#uitkomst {
+  background-color: burlywood;
+  height: 70px;
+  font-size: 30px;
+  border-radius: 10px;
+  padding: 20px;
+  font-weight: bold;
+  background-color: blue;
+}
+
+.een, .twee {
   border: 5px solid grey;
+}
+
+.een p, .twee p {
+  -webkit-animation: T 10s linear infinite;
+          animation: T 10s linear infinite;
+}
+
+@-webkit-keyframes T {
+  from {
+    color: red;
+  }
+  to {
+    color: darkblue;
+  }
+}
+
+@keyframes T {
+  from {
+    color: red;
+  }
+  to {
+    color: darkblue;
+  }
 }
 
 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 35px;
   color: red;
+}
+
+.twee {
+  background-color: red;
+  border: 15px dashed black;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+* {
+  background-color: green;
+  margin: 10px;
+  padding: 0;
+}
+
+hr {
+  width: 100%;
+  height: 3px;
+  background-color: blueviolet;
+}
+
+.move {
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  height: 300px;
+  border: 2px dashed chartreuse;
+}
+
+.cirkel {
+  width: 80px;
+  height: 80px;
+  background-color: chartreuse;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 5s;
+  transition: -webkit-transform 5s;
+  transition: transform 5s;
+  transition: transform 5s, -webkit-transform 5s;
+  -webkit-transition-delay: 4.3s;
+          transition-delay: 4.3s;
+  z-index: 1;
+  position: relative;
+  left: 700px;
+}
+
+.vierkant {
+  width: 100px;
+  height: 120px;
+  background-color: coral;
+  -webkit-transition: -webkit-transform 9s;
+  transition: -webkit-transform 9s;
+  transition: transform 9s;
+  transition: transform 9s, -webkit-transform 9s;
+  z-index: -1;
+}
+
+.reken {
+  font-size: 35px;
+  width: 1500px;
+  margin: 100px;
+}
+
+.reken input {
+  height: 70px;
+  width: 700px;
+  font-size: 30px;
+  background-color: transparent;
+  letter-spacing: 5px;
+}
+
+.modal {
+  /* display: none; */
+  background-color: turquoise;
+  border: 3px solid grey;
+}
+
+.lijst {
+  background-color: cadetblue;
+  width: 1500px;
+  border: 3px double blue;
+}
+
+table, th, td {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: green;
+}
+
+thead {
+  height: 50px;
+}
+
+thead td {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 35px;
+  color: red;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+tbody {
+  font-size: 35px;
+  color: cadetblue;
+}
+
+tbody > tr > td:nth-child(2) {
+  width: 60%;
 }
 /*# sourceMappingURL=style.css.map */

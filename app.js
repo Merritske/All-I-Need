@@ -2,13 +2,7 @@
 let cirkel = document.querySelector(".cirkel")
 let moveD = document.querySelector(".move")
 let vierk = document.querySelector(".vierkant")
-moveD.addEventListener("mousemove", function () {
-        console.log("heelo")
-       // matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
-        cirkel.style.transform = "matrix(0, 0.5, 0.5, 0, 1400,0 )"
-      //  cirkel.style.transform = "skew(20deg, 45deg)"
-vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
-    })
+
     // function test(){
     //   return legende.innerHTML = "REKENSOM"
     // }
@@ -46,12 +40,15 @@ checkresultBtn.addEventListener("click", resultaat=>{
   console.log(c)
   console.log(som.value)
   if(som.value == c){
-  alert ("Dat is correct")
+       // matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+        cirkel.style.transform = "matrix(0, 0.5, 0.5, 0, 1400,0 )"
+vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
+  
 }else{
-  alert(`dat is niet correct, de juiste oplossing is ${c}`)
+
+  vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
+
+  alert(`helaas je slaat de bal helemaal mis, de juiste oplossing is ${c}`)
 }
-
 })
-
-
 })
