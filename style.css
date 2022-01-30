@@ -6,10 +6,17 @@
   padding: 20px;
 }
 
-#userBtn:hover, #uitkomst:hover {
-  background-color: palevioletred;
-  -webkit-box-shadow: 0 0 8px 5px grey;
-          box-shadow: 0 0 8px 5px grey;
+#userInput {
+  width: 500px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 35px;
+  color: red;
+  color: aquamarine;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
 }
 
 #uitkomst {
@@ -27,30 +34,27 @@
 }
 
 .een p, .twee p {
-  -webkit-animation: T 10s linear infinite;
-          animation: T 10s linear infinite;
+  -webkit-animation-name: T;
+          animation-name: T;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes T {
-  from {
-    color: red;
-  }
-  to {
+  50% {
     color: darkblue;
   }
 }
 
 @keyframes T {
-  from {
-    color: red;
-  }
-  to {
+  50% {
     color: darkblue;
   }
 }
-
 p {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
   color: red;
 }
@@ -61,28 +65,15 @@ p {
 }
 
 main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 * {
@@ -97,11 +88,21 @@ hr {
   background-color: blueviolet;
 }
 
+.modal {
+  visibility: hidden;
+  border: 3px solid grey;
+  width: 2000px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  z-index: 1;
+  position: absolute;
+  top: 200px;
+  left: 400px;
+}
+
 .move {
-  margin-left: auto;
-  margin-right: auto;
-  width: 900px;
-  height: 300px;
+  position: absolute;
   border: 2px dashed chartreuse;
 }
 
@@ -110,12 +111,8 @@ hr {
   height: 80px;
   background-color: chartreuse;
   border-radius: 50%;
-  -webkit-transition: -webkit-transform 5s;
-  transition: -webkit-transform 5s;
   transition: transform 5s;
-  transition: transform 5s, -webkit-transform 5s;
-  -webkit-transition-delay: 4.3s;
-          transition-delay: 4.3s;
+  transition-delay: 4.3s;
   z-index: 1;
   position: relative;
   left: 700px;
@@ -125,14 +122,13 @@ hr {
   width: 100px;
   height: 120px;
   background-color: coral;
-  -webkit-transition: -webkit-transform 9s;
-  transition: -webkit-transform 9s;
   transition: transform 9s;
-  transition: transform 9s, -webkit-transform 9s;
   z-index: -1;
 }
 
 .reken {
+  display: flex;
+  flex-direction: row;
   font-size: 35px;
   width: 1500px;
   margin: 100px;
@@ -146,10 +142,60 @@ hr {
   letter-spacing: 5px;
 }
 
-.modal {
-  /* display: none; */
-  background-color: turquoise;
-  border: 3px solid grey;
+.countContent {
+  width: 50%;
+}
+
+.countHeader, .countBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 35px;
+  color: red;
+  color: blue;
+}
+
+.countBody {
+  justify-content: space-evenly;
+  font-size: 50px;
+}
+
+.countBody input {
+  font-size: 45px;
+}
+
+@-webkit-keyframes CorMoT {
+  0% {
+    right: 900px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+@keyframes CorMoT {
+  0% {
+    right: 900px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+#correct {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  z-index: 1;
+  -webkit-animation-name: CorMoT;
+          animation-name: CorMoT;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+          animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
 }
 
 .lijst {
@@ -167,15 +213,14 @@ table, th, td {
 
 thead {
   height: 50px;
+  padding: 15px;
 }
 
 thead td {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
   color: red;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 tbody {
@@ -185,5 +230,4 @@ tbody {
 
 tbody > tr > td:nth-child(2) {
   width: 60%;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

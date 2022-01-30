@@ -21,12 +21,18 @@ box-shadow: 0 0 8px 5px grey;
 @mixin borderA($color, $width){
 border: $width solid $color;
 }
-
 #userBtn{
-@include Btn;
+    @include Btn;
 }
-#userBtn:hover, #uitkomst:hover{
-   @include hoverBtn;
+
+#userInput {
+    width: 500px;
+   @include text;
+   color: aquamarine;
+
+}
+form{
+    @include display;
 }
 #uitkomst{
     @include Btn;
@@ -40,12 +46,14 @@ border: $width solid $color;
 
 }
 .een p{
- animation: T 10s linear infinite;
-
+animation-name: T;
+animation-duration: 10s;
+animation-iteration-count: infinite;
 }
 @keyframes T{
-    from {color: red}
-    to {color: darkblue}
+
+    50% {color: darkblue}
+ 
 }
 
 p{
@@ -70,6 +78,7 @@ section{
       background-color: green;
     margin:10px;
     padding:0;
+ 
 }
 
 
@@ -78,11 +87,22 @@ hr{
     height: 3px;
     background-color: blueviolet;
 }
+.modal{
+visibility: hidden;
+    border: 3px solid grey;
+    width: 2000px;
+    height: 600px;
+    @include display;
+ 
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+    left:400px;
+}
 .move{
-    margin-left:auto;
-    margin-right: auto;
-    width: 900px;
-    height: 300px;
+position: absolute;
+
+
     border: 2px dashed chartreuse;
 }
 .cirkel{
@@ -98,6 +118,7 @@ hr{
    
 }
 .vierkant{
+    
     width: 100px;
     height: 120px;
     background-color: coral;
@@ -105,6 +126,7 @@ hr{
     z-index: -1;
 }
 .reken{
+    @include display;
     font-size: 35px;
     width: 1500px;
     margin: 100px;
@@ -117,14 +139,39 @@ hr{
     letter-spacing: 5px;
 }
 
-
-.modal{
-    /* display: none; */
-    background-color: turquoise;
-    border: 3px solid grey;
-
+.countContent{
+    width: 50%;
 }
-
+.countHeader{
+    @include display;
+    justify-content: space-between;
+    @include text;
+    color: blue;
+}
+.countBody{
+@extend .countHeader;
+justify-content: space-evenly;
+font-size: 50px;
+}
+.countBody input{
+    font-size: 45px;
+}
+@keyframes CorMoT{
+    0%{
+        right:900px;
+    }
+    100%{
+        left: 10px;
+    }
+}
+#correct{
+width: fit-content;
+height: fit-content;
+z-index: 1;
+animation-name: CorMoT;
+animation-duration: 2s;
+animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649)
+}
 .lijst{
     background-color: cadetblue;
     width: 1500px;
@@ -139,7 +186,7 @@ table, th, td {
 
 thead{
 height: 50px;
-
+padding: 15px;
 }
 thead td{
  @include text;

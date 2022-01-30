@@ -18,7 +18,7 @@
                 <p>Let's play a game</p>
             </div>
             <div class="twee">
-           
+
             </div>
         </section>
         <section>
@@ -32,7 +32,7 @@
 
         <section>
             <div class="een">
-<p>Go</p>
+                <p>Go</p>
             </div>
             <div class="twee">
 
@@ -42,13 +42,8 @@
     </main>
 
 
-    <hr>
-    <div class="move">
-        <div class="cirkel">
-        </div>
-        <div class="vierkant">
-        </div>
-    </div>
+
+
     <hr>
     <div class="reken">
         <fieldset>
@@ -56,28 +51,54 @@
                 Rekenmachine
             </legend>
             <form>
-                <input type="text" placeholder="give username" id="userInput">
-                <button type="submit" id="userBtn">Enter</button>
 
-                <div class="modal">
-                    <div class="modalContent">
-                        <div class="modalHeader">
-                            <span class="close">&times;</span>
-                            <h2>Los de rekensom op</h2>
-                        </div>
-                        <div class="modalBody">
-                            <div class="rekensom">5+7 =  </div>
-                            <input type="text" name="som" id="som">
-                        </div>
-                        <div class="modalFooter">
-                            <button type="submit" id="uitkomst" >CONTROLE</button>
-                        </div>
-                    </div>
-                </div>
-    </div>
-    <!--Als de oplossing juist is alert de bal raak/ als opl fout is alert met de rekensom en de oplossing-->
+                <select  id="userInput">
+<option value="An">An</option>
+<option value="Lena">Lena</option>
+<option value="Marie">Marie</option>
+</select>
+                <button type="submit" id="userBtn">Enter</button>
     </form>
-    </fieldset>
+
+                <div class="counContent">
+                    <div class="countHeader">
+                        <h2>Los de rekensom op</h2>
+                        <!-- <span class="close">&times;</span> -->
+
+                    </div>
+                    <div class="countBody">
+                        <div class="rekensom">5+7 = </div>
+                        <input type="text" name="som" id="som">
+                    </div>
+                    <div class="countFooter">
+                        <button type="submit" id="uitkomst">CONTROLE</button>
+
+                    </div>
+                    <h2 id="correct"></h2>
+                </div>
+        
+        </fieldset>
+      
+
+
+
+    </div>
+
+  <div class="modal">
+
+
+            <div class="move">
+
+                <div class="cirkel">
+                </div>
+                <div class="vierkant">
+                </div>
+            </div>
+        </div>
+
+
+    <!--Als de oplossing juist is alert de bal raak/ als opl fout is alert met de rekensom en de oplossing-->
+
     <div class="lijst">
         <table>
             <thead>
@@ -89,9 +110,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <th>1</th>
-                    <td>rekensom</td>
-                    <td>check</td>
+                    <th>totaal aantal rekenoefeningen</th>
+                    <td>hoeveel fout</td>
+                    <td>hoeveel juist</td>
+                    <td>Percentage</td>
                 </tr>
             </tbody>
         </table>
