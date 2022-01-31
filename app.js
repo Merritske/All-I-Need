@@ -57,10 +57,10 @@ userBtn.addEventListener("click", adUser => {
   let percentage = countCorrect / aantal * 100
 
 
-
+ let listItem = []
 db.collection("rekengame").onSnapshot((snapshot) => {
 
- let listItem = []
+
   snapshot.forEach((doc) => {
 
    listItem.push({
@@ -84,7 +84,7 @@ db.collection("rekengame").onSnapshot((snapshot) => {
     <td >${doc.data().percentage} %</td>
 </tr>`
 
-   console.log(listItem)
+  // console.log(listItem)
 
   })
 
@@ -111,25 +111,27 @@ db.collection("rekengame").onSnapshot((snapshot) => {
         modal.style.visibility = "visible"
         if (som.value == c) {
       
-
+console.log(userN.innerHTML)
 
           for (let u = 0; u < listItem.length; u++) {
-         
+           if (listItem[u].user == userN.innerHTML) {
+
             countCorrect = listItem[u].countCorrect +1
             console.log(countCorrect)
             aantal = listItem[u].aantal + 1
             percentage = Math.floor(countCorrect / aantal * 100)
-            if (listItem[u].user == userI.value) {
-
+          
               id = listItem[u].id
               db.collection("rekengame").doc(id).update({
                 percentage: percentage,
                 aantal: aantal,
                 countCorrect: countCorrect
               })
+         
             }
-     
+       
           }
+        
           console.log(countCorrect)
 
           //move om aan te duiden dat het correct is + "correct dat verschijnt"
@@ -155,31 +157,10 @@ db.collection("rekengame").onSnapshot((snapshot) => {
             }
           }, 600)
 
-  
+ 
 
         } else {
-
-          vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
           let correctT = "Helaas, je slaat de bal mis!           "
-          for (let u = 0; u < listItem.length; u++) {
-countCorrect = listItem[u].countCorrect
-            console.log(countCorrect)
-            aantal = listItem[u].aantal + 1
-            percentage = Math.floor(countCorrect / aantal * 100)
-
-            if (listItem[u].user == userI.value) {
-
-              id = listItem[u].id
-
-              db.collection("rekengame").doc(id).update({
-                percentage: percentage,
-                aantal: aantal,
-                countCorrect: countCorrect
-              }) 
-                  db.collection("rekengame").doc(id).replace()
-            }
-       
-          }
           let arT = []
           for (let i of correctT) {
             arT.push(i)
@@ -198,6 +179,28 @@ countCorrect = listItem[u].countCorrect
 
             }
           }, 300)
+          vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
+    
+          for (let u = 0; u < listItem.length; u++) {
+countCorrect = listItem[u].countCorrect
+            console.log(countCorrect)
+            aantal = listItem[u].aantal + 1
+            percentage = Math.floor(countCorrect / aantal * 100)
+
+            if (listItem[u].user == userI.value) {
+
+              id = listItem[u].id
+
+              db.collection("rekengame").doc(id).update({
+                percentage: percentage,
+                aantal: aantal,
+                countCorrect: countCorrect
+              }) 
+                  
+            }
+       
+          } 
+     
         }
 
 
