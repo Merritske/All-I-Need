@@ -34,10 +34,40 @@ header{
 justify-content: space-around;
     padding: 20px;
 }
-#go:hover{
-    transform: scale(1.5,1.5);
+#go:hover {
+    transform: scale(1.8,1.8);
     cursor: pointer;
     background-color: transparent;
+}
+    #go:hover .tooltip{
+  visibility: visible;
+}
+#go{
+
+       position: relative;
+}
+.tooltip{
+  visibility: hidden;
+   position: absolute;
+   top: 0;
+   left:-240px;
+   width: 200px;
+   height: 70px;
+  z-index: 1;
+  background-color: aqua ;
+ border-radius: 20px;
+  @include text;
+  font-size: 20px;
+}
+
+.tooltip::after{
+    content: " ";
+    border-width: 10px;
+    border-color: transparent transparent transparent aqua;
+    border-style: solid;
+    position:absolute;
+    top: 20%;
+    left: 100%;
 }
 #userBtn{
     @include Btn;
@@ -69,6 +99,35 @@ form {
     @include borderA(grey, 5px );
 
 }
+.een:hover{
+    @extend #go;
+}
+.een:hover .tooltipE{
+visibility: visible;
+}
+.tooltipE{
+    visibility: hidden;
+     position: absolute;
+     top: 50px;
+     left:250px;
+     width: 200px;
+     height: 75px;
+    z-index: 1;
+    background-color: aqua ;
+   border-radius: 20px;
+    @include text;
+    font-size: 20px;
+  }
+  
+  .tooltipE::after{
+      content: " ";
+      border-width: 10px;
+      border-color: aqua transparent transparent transparent;
+      border-style: solid;
+      position:absolute;
+      top: 0%;
+      left: 0%;
+  }
 .een p{
 animation-name: T;
 animation-duration: 10s;

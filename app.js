@@ -3,13 +3,13 @@ let cirkel = document.querySelector(".cirkel")
 let moveD = document.querySelector(".move")
 let vierk = document.querySelector(".vierkant")
 
-    // function test(){
-    //   return legende.innerHTML = "REKENSOM"
-    // }
-    // test();
+// function test(){
+//   return legende.innerHTML = "REKENSOM"
+// }
+// test();
 
 
-    //REKENSPELLETJE
+//REKENSPELLETJE
 let userI = document.querySelector("#userInput")
 let newI = document.querySelector("#newPlayer")
 let userBtn = document.querySelector("#userBtn")
@@ -29,37 +29,49 @@ let cT = document.querySelector("#correct")
 //resultaat
 //wordt in een lijst gezet
 
-userI.value = ""
+  userI.value = ""
+//nieuwe gebruiker maken
+userBtn.addEventListener("click", adUser => {
+  adUser.preventDefault()
+  let obj = {
+    user: newI.value,
+    percentage: 0,
+    aantal: 0,
+    countCorrect: 0
+  }
+  db.collection("rekengame").add(obj)
 
-userBtn.addEventListener("click", adUser=>{
-    adUser.preventDefault()
-let obj = {
-  user: newI.value,
-percentage: 0,
-aantal: 0
-}
-db.collection("rekengame").add(obj)
-    userI.value = newI.value
 
-newI.value = ""
+  newI.value = ""
+
+
+
 })
 
-db.collection("rekengame").onSnapshot((snapshot)=>{
-  let listItem =[]
-let countCorrect=0
-let aantal=0
-let percentage = countCorrect/aantal *100
-
-  snapshot.forEach((doc)=>{
-
-  listItem.push({
-    id: doc.id,
-    ...doc.data()
-  })
 
 
-userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
-tb.innerHTML += `<tr>
+ 
+
+  let countCorrect = 0
+  let aantal = 0
+  let percentage = countCorrect / aantal * 100
+
+
+
+db.collection("rekengame").onSnapshot((snapshot) => {
+
+ let listItem = []
+  snapshot.forEach((doc) => {
+
+   listItem.push({
+      id: doc.id,
+      ...doc.data()
+    })
+ 
+ 
+
+    userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
+    tb.innerHTML += `<tr>
     <th id="${doc.data().id}">
      ${doc.data().user}
     </th>
@@ -72,127 +84,134 @@ tb.innerHTML += `<tr>
     <td >${doc.data().percentage} %</td>
 </tr>`
 
-console.log(doc.data().user)
+   console.log(listItem)
 
   })
 
-console.log(aantal)
-goBtn.addEventListener("click", openReken=>{
 
 
-console.log(listItem)
-
-  if(confirm     (`Is ${userI.value} your name?`)  ){
-  
- 
-  
+  goBtn.addEventListener("click", openReken => {
 
 
-    reken.style.visibility = "visible"
-let a = Math.floor(Math.random()*10)
-let b = Math.floor(Math.random()*10)
-let c = a+b
-rekensom.innerHTML = `${a} + ${b} =`
-userN.innerHTML = userI.value
+    console.log(listItem)
 
-checkresultBtn.addEventListener("click", resultaat=>{
-  resultaat.preventDefault()
+    if (confirm(`Is ${userI.value} your name?`)) {
 
-  console.log(countCorrect)
-  modal.style.visibility = "visible"
-  if(som.value == c){
-    aantal = aantal +1
-    countCorrect = countCorrect +1
+      reken.style.visibility = "visible"
+      let a = Math.floor(Math.random() * 10)
+      let b = Math.floor(Math.random() * 10)
+      let c = a + b
+      rekensom.innerHTML = `${a} + ${b} =`
+      userN.innerHTML = userI.value
 
-    for(let u=0; u<listItem.length;u++){
+      checkresultBtn.addEventListener("click", resultaat => {
+        resultaat.preventDefault()
+
+        console.log(countCorrect)
+        modal.style.visibility = "visible"
+        if (som.value == c) {
+      
 
 
-    percentage = countCorrect/aantal *100
+          for (let u = 0; u < listItem.length; u++) {
+         
+            countCorrect = listItem[u].countCorrect +1
+            console.log(countCorrect)
+            aantal = listItem[u].aantal + 1
+            percentage = Math.floor(countCorrect / aantal * 100)
+            if (listItem[u].user == userI.value) {
 
-      if(listItem[u].user == userI.value){
-        
-        id = listItem[u].id
-
-        db.collection("rekengame").doc(id).update({
-          percentage: percentage ,
-    aantal: aantal  
-  })
-      }
-    }
-    console.log(countCorrect)
-    // db.collection("rekengame").doc.data().update({
-    //   percentage : countCorrect/aantal *100
-    // })
-       // matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
-        cirkel.style.transform = "matrix(0, 0.5, 0.5, 0, 1400,0 )"
-vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
-let correctT = "correct!    "
-let arT = []
-  for(let i of correctT){
-   arT.push(i)
-  }
-  console.log(arT)
+              id = listItem[u].id
+              db.collection("rekengame").doc(id).update({
+                percentage: percentage,
+                aantal: aantal,
+                countCorrect: countCorrect
+              })
+            }
      
-let x=0
-  let show =  setInterval(function(){  
-  cT.innerHTML += arT[x]
- console.log(arT[x]) 
-cT.style.color ="red"
+          }
+          console.log(countCorrect)
 
-x ++
- if(x == 12){
-   clearInterval(show)
-   //nog niet goed, user zou moeten blijven maar de rest zou moeten op "nul" staan
-   confirm("play again?")? location.reload() : location.reload();
+          //move om aan te duiden dat het correct is + "correct dat verschijnt"
+          // matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+          cirkel.style.transform = "matrix(0, 0.5, 0.5, 0, 1400,0 )"
+          vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
+          let correctT = "correct!    "
+          let arT = []
+          for (let i of correctT) {
+            arT.push(i)
+          }
+          console.log(arT)
+          let x = 0
+          let show = setInterval(function () {
+            cT.innerHTML += arT[x]
+            console.log(arT[x])
+            cT.style.color = "red"
+            x++
+            if (x == 12) {
+              clearInterval(show)
+              //nog niet goed, user zou moeten blijven maar de rest zou moeten gereload zijn -> ook bij "else" veranderen
+              confirm("play again?") ? location.reload() : location.reload();
+            }
+          }, 600)
 
- }
-} , 600) 
-
-   
-}else{
-
-  vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
-  let correctT = "Helaas, je slaat de bal mis!           "
- aantal = aantal + 1
-
-  for(let u=0; u<listItem.length;u++){
-    if(listItem[u].user == userI.value){
-      id = listItem[u].id
-      db.collection("rekengame").doc(id).update({
-        percentage: percentage ,
-  aantal: aantal 
-})
-    }
-  }
-  let arT = []
-    for(let i of correctT){
-     arT.push(i)
-    }
-    console.log(arT)
-       
-  let x=0
-    let show =  setInterval(function(){  
-    cT.innerHTML += arT[x]
-   console.log(arT[x]) 
-  cT.style.color ="red"
   
-  x ++
-   if(x == 37){
-     clearInterval(show)
-     confirm("play again?")? location.reload() : location.reload();
-    
-   }
-  } , 300) 
-}
 
-})
+        } else {
 
-  }else{
-alert("select your name or create a username")
+          vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
+          let correctT = "Helaas, je slaat de bal mis!           "
+          for (let u = 0; u < listItem.length; u++) {
+countCorrect = listItem[u].countCorrect
+            console.log(countCorrect)
+            aantal = listItem[u].aantal + 1
+            percentage = Math.floor(countCorrect / aantal * 100)
 
-  }
+            if (listItem[u].user == userI.value) {
 
-})
+              id = listItem[u].id
+
+              db.collection("rekengame").doc(id).update({
+                percentage: percentage,
+                aantal: aantal,
+                countCorrect: countCorrect
+              }) 
+                  db.collection("rekengame").doc(id).replace()
+            }
+       
+          }
+          let arT = []
+          for (let i of correctT) {
+            arT.push(i)
+          }
+          console.log(arT)
+          let x = 0
+          let show = setInterval(function () {
+            cT.innerHTML += arT[x]
+            console.log(arT[x])
+            cT.style.color = "red"
+
+            x++
+            if (x == 37) {
+              clearInterval(show)
+              confirm("play again?") ? location.reload() : location.reload();
+
+            }
+          }, 300)
+        }
+
+
+
+
+      })
+
+    } else {
+      alert("select your name or create a username")
+
+    }
+   
+
+  })
 
 
 })
