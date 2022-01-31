@@ -1,3 +1,22 @@
+* {
+  background-color: #69696b;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+#go:hover {
+  transform: scale(1.5, 1.5);
+  cursor: pointer;
+  background-color: transparent;
+}
+
 #userBtn {
   background-color: burlywood;
   height: 70px;
@@ -6,17 +25,25 @@
   padding: 20px;
 }
 
-#userInput {
+#userInput, #newPlayer {
   width: 500px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
-  color: red;
+  color: #f66;
+  padding: 10px;
   color: aquamarine;
 }
 
 form {
   display: flex;
   flex-direction: row;
+}
+
+form label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 35px;
+  color: #f66;
+  padding: 10px;
 }
 
 #uitkomst {
@@ -31,6 +58,7 @@ form {
 
 .een, .twee {
   border: 5px solid grey;
+  border-radius: 10px;
 }
 
 .een p, .twee p {
@@ -56,7 +84,8 @@ form {
 p {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
-  color: red;
+  color: #f66;
+  padding: 10px;
 }
 
 .twee {
@@ -74,12 +103,6 @@ main {
 section {
   display: flex;
   flex-direction: row;
-}
-
-* {
-  background-color: green;
-  margin: 10px;
-  padding: 0;
 }
 
 hr {
@@ -102,7 +125,12 @@ hr {
 }
 
 .move {
-  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background-color: green;
+  width: 1800px;
+  height: 550px;
   border: 2px dashed chartreuse;
 }
 
@@ -129,9 +157,15 @@ hr {
 .reken {
   display: flex;
   flex-direction: row;
+  visibility: hidden;
   font-size: 35px;
   width: 1500px;
   margin: 100px;
+}
+
+fieldset {
+  border: 3px solid green;
+  border-radius: 10px;
 }
 
 .reken input {
@@ -152,7 +186,8 @@ hr {
   justify-content: space-between;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
-  color: red;
+  color: #f66;
+  padding: 10px;
   color: blue;
 }
 
@@ -165,23 +200,6 @@ hr {
   font-size: 45px;
 }
 
-@-webkit-keyframes CorMoT {
-  0% {
-    right: 900px;
-  }
-  100% {
-    left: 10px;
-  }
-}
-
-@keyframes CorMoT {
-  0% {
-    right: 900px;
-  }
-  100% {
-    left: 10px;
-  }
-}
 #correct {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -189,13 +207,11 @@ hr {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  z-index: 1;
-  -webkit-animation-name: CorMoT;
-          animation-name: CorMoT;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
-          animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+  background-color: transparent;
+  font-size: 40px;
+  z-index: 2;
+  transition-duration: 3s;
+  transition-delay: 3s;
 }
 
 .lijst {
@@ -211,16 +227,14 @@ table, th, td {
   background-color: green;
 }
 
-thead {
-  height: 50px;
-  padding: 15px;
-}
-
-thead td {
+thead th {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 35px;
-  color: red;
+  color: #f66;
+  padding: 10px;
   align-items: center;
+  height: 50px;
+  padding: 15px;
 }
 
 tbody {
@@ -228,6 +242,8 @@ tbody {
   color: cadetblue;
 }
 
-tbody > tr > td:nth-child(2) {
-  width: 60%;
+tbody th {
+  font-size: 45px;
+  color: blue;
+  border-bottom: 2px solid black;
 }/*# sourceMappingURL=style.css.map */

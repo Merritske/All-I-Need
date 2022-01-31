@@ -6,10 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    <script src="firebase.js"></script>
+        
     <link rel="stylesheet" href="style.css">
+  
 </head>
 
 <body>
+    <header>
+
+                <form>
+ <label for="userInput">Select your name 
+            <select  id="userInput" >
+               
+<!--options come inhere-->
+
+</select></label>
+<input type="text" placeholder="create new player" id="newPlayer">
+            <button type="submit" id="userBtn">Enter</button>
+</form>
+    </header>
     <main>
 
 
@@ -31,8 +50,10 @@
         </section>
 
         <section>
-            <div class="een">
-                <p>Go</p>
+            <div class="een" id="go">
+                <!--eventueel een random maken, rekensom verbergen en verschillende rekenopgave maken
+                met + - * / als op de Go gedrukt wordt, geeft het de rekenopgave-->
+                <p >Go</p>
             </div>
             <div class="twee">
 
@@ -50,15 +71,7 @@
             <legend id="legende">
                 Rekenmachine
             </legend>
-            <form>
-
-                <select  id="userInput">
-<option value="An">An</option>
-<option value="Lena">Lena</option>
-<option value="Marie">Marie</option>
-</select>
-                <button type="submit" id="userBtn">Enter</button>
-    </form>
+           
 
                 <div class="counContent">
                     <div class="countHeader">
@@ -74,7 +87,7 @@
                         <button type="submit" id="uitkomst">CONTROLE</button>
 
                     </div>
-                    <h2 id="correct"></h2>
+                   <h2 id="correct"></h2>
                 </div>
         
         </fieldset>
@@ -93,32 +106,34 @@
                 </div>
                 <div class="vierkant">
                 </div>
-            </div>
+                 
+            </div> 
+           
         </div>
 
 
     <!--Als de oplossing juist is alert de bal raak/ als opl fout is alert met de rekensom en de oplossing-->
 
     <div class="lijst">
-        <table>
+        <table >
             <thead>
                 <tr>
-                    <td id="username">
-                        username
-                    </td>
+                    <th id="username">
+                        Username
+                    </th>     
+                    <th id="totaal">Totaal aantal oefeningen</th>
+           
+                    <th id="percentage">Percentage</th>
+             
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th>totaal aantal rekenoefeningen</th>
-                    <td>hoeveel fout</td>
-                    <td>hoeveel juist</td>
-                    <td>Percentage</td>
-                </tr>
-            </tbody>
+       <tbody id="lijst"></tbody>
         </table>
     </div>
 
+
+
+   
     <script src="app.js"></script>
 </body>
 

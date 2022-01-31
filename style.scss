@@ -1,7 +1,8 @@
 @mixin text {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
-    color: red;
+    color: #f66;
+    padding: 10px;
 }
 @mixin display{
     display: flex;
@@ -20,11 +21,30 @@ box-shadow: 0 0 8px 5px grey;
 }
 @mixin borderA($color, $width){
 border: $width solid $color;
+border-radius: 10px;
+}
+* {
+    background-color: rgb(105, 105, 107);
+    margin: 0;
+    padding: 0;
+  }
+
+header{
+@include display;
+justify-content: space-around;
+    padding: 20px;
+}
+#go:hover{
+    transform: scale(1.5,1.5);
+    cursor: pointer;
+    background-color: transparent;
 }
 #userBtn{
     @include Btn;
 }
-
+#newPlayer{
+    @extend #userInput;
+}
 #userInput {
     width: 500px;
    @include text;
@@ -34,6 +54,10 @@ border: $width solid $color;
 form{
     @include display;
 }
+form {
+    label{
+@include text;
+}}
 #uitkomst{
     @include Btn;
     font-weight: bold;
@@ -74,12 +98,7 @@ main{
 section{
    @include display
 }
-*{
-      background-color: green;
-    margin:10px;
-    padding:0;
- 
-}
+
 
 
 hr{
@@ -93,16 +112,19 @@ visibility: hidden;
     width: 2000px;
     height: 600px;
     @include display;
- 
+
     z-index: 1;
     position: absolute;
     top: 200px;
     left:400px;
 }
 .move{
-position: absolute;
-
-
+    margin-left: auto;
+    margin-right: auto;
+position: relative;
+ background-color: green;
+width: 1800px;
+height: 550px;
     border: 2px dashed chartreuse;
 }
 .cirkel{
@@ -127,9 +149,14 @@ position: absolute;
 }
 .reken{
     @include display;
+    visibility: hidden;
     font-size: 35px;
     width: 1500px;
     margin: 100px;
+    
+}
+fieldset{
+    @include borderA(green, 3px )
 }
 .reken input{
     height: 70px;
@@ -156,21 +183,26 @@ font-size: 50px;
 .countBody input{
     font-size: 45px;
 }
-@keyframes CorMoT{
-    0%{
-        right:900px;
-    }
-    100%{
-        left: 10px;
-    }
-}
+// @keyframes CorMoT{
+//     0%{
+//         right:900px;
+//     }
+//     100%{
+//         left: 10px;
+//     }
+// }
 #correct{
 width: fit-content;
 height: fit-content;
-z-index: 1;
-animation-name: CorMoT;
-animation-duration: 2s;
-animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649)
+background-color: transparent;
+font-size: 40px;
+z-index: 2;
+// animation-name: CorMoT;
+// animation-duration: 3s;
+// animation-delay: 5s;
+transition-duration: 3s;
+transition-delay: 3s;
+
 }
 .lijst{
     background-color: cadetblue;
@@ -182,21 +214,25 @@ table, th, td {
     margin-left: auto;
     margin-right: auto;
     background-color:green ;
+  
 }
 
-thead{
-height: 50px;
-padding: 15px;
-}
-thead td{
+thead th{
  @include text;
  align-items: center;
+ height: 50px;
+padding: 15px;
 }
+
 tbody{
     font-size: 35px;
     color: cadetblue;
+ 
 }
 
-tbody > tr > td:nth-child(2){
-    width: 60%;
+tbody th{
+    font-size: 45px;
+    color: blue;
+    border-bottom: 2px solid black;
+  
 }

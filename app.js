@@ -11,40 +11,122 @@ let vierk = document.querySelector(".vierkant")
 
     //REKENSPELLETJE
 let userI = document.querySelector("#userInput")
+let newI = document.querySelector("#newPlayer")
 let userBtn = document.querySelector("#userBtn")
+let goBtn = document.querySelector("#go")
 let userN = document.querySelector("#username")
 let modal = document.querySelector(".modal")
-let tbody = document.querySelector("tbody")
+let tb = document.querySelector("#lijst")
 let rekensom = document.querySelector(".rekensom")
+let reken = document.querySelector(".reken")
 let som = document.querySelector("#som")
 let checkresultBtn = document.querySelector("#uitkomst")
 let cT = document.querySelector("#correct")
+
+
 //invoeren username
 //pop-up rekensom met random getallen
 //resultaat
 //wordt in een lijst gezet
 
+userI.value = ""
 
 userBtn.addEventListener("click", adUser=>{
     adUser.preventDefault()
-userN.innerHTML = userI.value
+let obj = {
+  user: newI.value,
+percentage: 0,
+aantal: 0
+}
+db.collection("rekengame").add(obj)
+    userI.value = newI.value
 
-userI.value = ""
+newI.value = ""
+})
 
+db.collection("rekengame").onSnapshot((snapshot)=>{
+  let listItem =[]
+let countCorrect=0
+let aantal=0
+let percentage = countCorrect/aantal *100
+
+  snapshot.forEach((doc)=>{
+
+  listItem.push({
+    id: doc.id,
+    ...doc.data()
+  })
+
+
+userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
+tb.innerHTML += `<tr>
+    <th id="${doc.data().id}">
+     ${doc.data().user}
+    </th>
+</tr>
+
+<tr>
+<td></td>
+    <td >${doc.data().aantal}</td>
+
+    <td >${doc.data().percentage} %</td>
+</tr>`
+
+console.log(doc.data().user)
+
+  })
+
+console.log(aantal)
+goBtn.addEventListener("click", openReken=>{
+
+
+console.log(listItem)
+
+  if(confirm     (`Is ${userI.value} your name?`)  ){
+  
+ 
+  
+
+
+    reken.style.visibility = "visible"
 let a = Math.floor(Math.random()*10)
 let b = Math.floor(Math.random()*10)
 let c = a+b
 rekensom.innerHTML = `${a} + ${b} =`
+userN.innerHTML = userI.value
 
 checkresultBtn.addEventListener("click", resultaat=>{
   resultaat.preventDefault()
 
+  console.log(countCorrect)
   modal.style.visibility = "visible"
   if(som.value == c){
+    aantal = aantal +1
+    countCorrect = countCorrect +1
+
+    for(let u=0; u<listItem.length;u++){
+
+
+    percentage = countCorrect/aantal *100
+
+      if(listItem[u].user == userI.value){
+        
+        id = listItem[u].id
+
+        db.collection("rekengame").doc(id).update({
+          percentage: percentage ,
+    aantal: aantal  
+  })
+      }
+    }
+    console.log(countCorrect)
+    // db.collection("rekengame").doc.data().update({
+    //   percentage : countCorrect/aantal *100
+    // })
        // matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
         cirkel.style.transform = "matrix(0, 0.5, 0.5, 0, 1400,0 )"
 vierk.style.transform = "matrix(0, 5, 0.5, 0, 900, 100)"
-let correctT = "correct!"
+let correctT = "correct!    "
 let arT = []
   for(let i of correctT){
    arT.push(i)
@@ -58,17 +140,59 @@ let x=0
 cT.style.color ="red"
 
 x ++
- if(x == 8){
+ if(x == 12){
    clearInterval(show)
+   //nog niet goed, user zou moeten blijven maar de rest zou moeten op "nul" staan
+   confirm("play again?")? location.reload() : location.reload();
+
  }
 } , 600) 
+
    
 }else{
 
   vierk.style.transform = "matrix(0, 3, 0.5, 0, 900, 100)"
+  let correctT = "Helaas, je slaat de bal mis!           "
+ aantal = aantal + 1
 
-  alert(`helaas je slaat de bal helemaal mis, de juiste oplossing is ${c}`)
-}
+  for(let u=0; u<listItem.length;u++){
+    if(listItem[u].user == userI.value){
+      id = listItem[u].id
+      db.collection("rekengame").doc(id).update({
+        percentage: percentage ,
+  aantal: aantal 
 })
+    }
+  }
+  let arT = []
+    for(let i of correctT){
+     arT.push(i)
+    }
+    console.log(arT)
+       
+  let x=0
+    let show =  setInterval(function(){  
+    cT.innerHTML += arT[x]
+   console.log(arT[x]) 
+  cT.style.color ="red"
+  
+  x ++
+   if(x == 37){
+     clearInterval(show)
+     confirm("play again?")? location.reload() : location.reload();
+    
+   }
+  } , 300) 
+}
+
+})
+
+  }else{
+alert("select your name or create a username")
+
+  }
+
+})
+
 
 })
