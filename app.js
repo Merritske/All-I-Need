@@ -39,18 +39,55 @@ userBtn.addEventListener("click", adUser => {
     aantal: 0,
     countCorrect: 0
   }
-  db.collection("rekengame").add(obj)
 
+  db.collection("rekengame").add(obj)
 
   newI.value = ""
 
+})
 
+window.addEventListener("DOMContentLoaded", ()=>{
+
+  db.collection("rekengame").onSnapshot((snapshot) => {
+
+tb.innerHTML =""
+    snapshot.forEach((doc) => {
+  
+     listItem.push({
+        id: doc.id,
+        ...doc.data()
+      })
+      console.log(doc.data())
+
+
+
+
+
+
+userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
+     tb.innerHTML += `<tr>
+      <th id="${doc.data().id}">
+       ${doc.data().user}
+      </th>
+  </tr>
+  
+  <tr>
+  <td></td>
+      <td >${doc.data().aantal}</td>
+  
+      <td >${doc.data().percentage} %</td>
+  </tr>`
+
+    })  
+
+
+
+  
+  // console.log(listItem)
 
 })
 
-
-
- 
+})
 
   let countCorrect = 0
   let aantal = 0
@@ -69,24 +106,26 @@ db.collection("rekengame").onSnapshot((snapshot) => {
     })
  
  
+// tb.innerHTML =""
 
-    userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
-    tb.innerHTML += `<tr>
-    <th id="${doc.data().id}">
-     ${doc.data().user}
-    </th>
-</tr>
 
-<tr>
-<td></td>
-    <td >${doc.data().aantal}</td>
+  userI.innerHTML += `<option value=${doc.data().user}>${doc.data().user}</option>`
+//      tb.innerHTML += `<tr>
+  //     <th id="${doc.data().id}">
+  //      ${doc.data().user}
+  //     </th>
+  // </tr>
+  
+  // <tr>
+  // <td></td>
+  //     <td >${doc.data().aantal}</td>
+  
+  //     <td >${doc.data().percentage} %</td>
+  // </tr>`
+  
+//   // console.log(listItem)
 
-    <td >${doc.data().percentage} %</td>
-</tr>`
-
-  // console.log(listItem)
-
-  })
+   })
 
 
 
