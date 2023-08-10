@@ -1,21 +1,52 @@
 html, *{
     margin:0;
     padding: 0;
-    background-color: azure;
     color: #333;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+a{
+   text-decoration: none; 
+   text-shadow: #333 2px 0px 5px ;
+}
+a:hover{
+cursor: pointer;
+color: blue;
+}
+/* header{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+} */
 main{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 header> ul{
-    background-color: #999;
+    background-color: #e8e6e6;
     color: white;
-
+padding: 25px;
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-align-items: start;
+    justify-content: space-between;
+align-items: center;
+font-size: 30px;
 }
+/* header>ul>li{
+    margin-top: 20px;
+} */
+#logo{
+    height: 50%;
+    margin-left: 20px;
+    box-shadow: 0px 2px 2px #333;
+}
+#logo:hover{
+    transform: scale(1.2);
+}
+header>ul>li>ul{
+    display: none;
+}
+/* terug tevoorschijn toveren van submenu => .js */
