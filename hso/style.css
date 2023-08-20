@@ -11,6 +11,7 @@ body {
 
     margin: 0 auto;
     font-size: 20px;
+    line-height: 150%;
     /* margin: 10px auto;
     padding: 10px; */
 
@@ -132,9 +133,8 @@ header>ul>li>ul {
 
 /* HOME */
 #intro {
-    width: 80%;
+    width: 85%;
     margin: 1em auto;
-    font-size: 1em;
     text-align: center;
 }
 
@@ -145,16 +145,16 @@ header>ul>li>ul {
     padding: 1em;
     border-radius: 1.1em;
     font-weight: bold;
-    line-height: 1.5em;
     width: 70%;
     margin: 1em auto;
 }
 
 .kleineContainer {
+    width: 70%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: 1.1em;
+    margin: 1.1em auto;
     font-size: 0.8em;
 }
 
@@ -164,7 +164,7 @@ header>ul>li>ul {
 
 .kleineContainer p {
     padding: 1.1em;
-    line-height: 1.5em;
+
 }
 
 .kleineContainer a:hover {
