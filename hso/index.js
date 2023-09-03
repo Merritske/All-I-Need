@@ -42,8 +42,18 @@ el.parentElement.style.display = "none";
 
 // // When the user clicks anywhere outside of the modal, close it
 // window.onclick = function(event) {
-//    if (event.target == popup) {
+//    if (event.currentTarget != popup) {
 //     popup.style.display = "none";
 //    }
-//  }
+// }
 
+//foto's groot tonen
+let imgSfeer = document.querySelectorAll('.sfeer img')
+console.log(imgSfeer)
+for(i=0;i<imgSfeer.length;i++){
+    imgSfeer[i].onclick = function(){
+         const el = event.currentTarget
+         console.log(el)
+         el.classList.toggle('big')
+    }
+}
