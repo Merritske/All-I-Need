@@ -135,7 +135,7 @@ h2{
     padding: 1.1em 2em;
 }
 /* HOME */
-#intro {
+.intro {
     width: 85%;
     margin: 1em auto;
     text-align: center;
@@ -268,3 +268,15 @@ flex-wrap: wrap;
   .big{
     transform: scale(2);
   }
+
+  /*ORKEST*/
+  .cv{
+    margin: 1em 2em 2.5em 2em;
+  }
+  .cv h3{
+margin-bottom: 0.9em;
+  }
+  .cv p{
+    margin-top: 0.8em;
+  }
+  
