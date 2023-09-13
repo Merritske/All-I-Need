@@ -57,3 +57,6 @@ for(i=0;i<imgSfeer.length;i++){
          el.classList.toggle('big')
     }
 }
+
+//inlog leden
+

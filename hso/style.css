@@ -280,3 +280,19 @@ margin-bottom: 0.9em;
     margin-top: 0.8em;
   }
   
+ table, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  th{
+    background-color: #b4a7f9;
+  }
+  th, td{
+    padding: 1.2em;
+  }
+  td:first-child{
+    width: fit-content;
+    box-sizing: border-box;
+  
+  }
+
