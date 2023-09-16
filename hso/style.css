@@ -279,7 +279,37 @@ margin-bottom: 0.9em;
   .cv p{
     margin-top: 0.8em;
   }
-  
+  .leden{
+    display: none;
+    position: absolute;
+    top: 5em;
+    background-color: #b4a7f9;
+    padding: 0.8em;
+  }
+  #leden:hover{
+cursor: pointer;
+color:blue;
+  }
+  form{
+    display: flex;
+flex-direction: column;
+  }
+   input{
+    padding: 0.8em;
+  }
+  #button{
+    width: max-content;
+     background-color: #333;
+    color: white;
+    font-size: large;
+    font-weight:900;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  #button:hover{
+   background-color:#16075d;
+    cursor: pointer;
+  }
  table, th, td{
     border: 2px solid black;
     border-collapse: collapse;
@@ -293,6 +323,11 @@ margin-bottom: 0.9em;
   td:first-child{
     width: fit-content;
     box-sizing: border-box;
-  
+  }
+ 
+
+  /* contact */
+  .contact{
+    margin: 2em;
   }
 

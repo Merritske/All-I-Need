@@ -39,8 +39,8 @@
                         <li>
                             <a href="#concertmeester">Concertmeester</a>
                         </li>
-                        <li>
-                            <a href="#leden">Leden</a>
+                        <li id="leden" onclick={showInlog()}>
+                            Leden
                             <!--Leden sectie = secure: inlog HSO + altviool2017!
                             inhoud = agenda-->
                         </li>
@@ -116,19 +116,24 @@
                     Hij is verbonden aan het orkest van het Vlaams Muziektheater, en de Chapelle de Loraine.</p>
                 <p>Niels speelt op een Italiaanse viool uit Pisa van de hand van Chericoni.</p>
         </div>
-        <div class="bestuur">
+        <div class="cv">
             <h3>Het bestuur</h3>
 <p>Voorzitter: Elly Brouwers<br>
 Ondervoorzitter: Carl Vervoort<br>
 Penningmeester: Marcella De Beuckelaer<br></p>
         </div>
 <div class="leden">
-    <h3 id="leden">Leden</h3>
+    <h3>Leden</h3>
     <p>Leden kunnen hier inloggen om het repetitieschema te raadplegen.</p>
+    <br>
     <form action="" >
+        <label for="name">Geef de gebruikersnaam:</label>
         <input type="name" id="HSO">
+        <br>
+        <label for="passwoord">Geef het passwoord:</label>
         <input type="password" name="passwoord" id="altviool2017!">
-        <input type="button" value="Log in">
+        <br>
+        <input id="button" type="button" value="Log in" onclick={openinlog()}>
     </form>
     
 </div>
@@ -153,6 +158,7 @@ copyright
 -->
         </footer>
     </div>
+    <script src="./index.js"></script>
 </body>
 
 </html>

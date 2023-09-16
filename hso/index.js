@@ -59,4 +59,21 @@ for(i=0;i<imgSfeer.length;i++){
 }
 
 //inlog leden
+let inlog = document.getElementById('HSO')
+let pass = document.getElementById('altviool2017!')
+let leden = document.querySelector('.leden')
+function openinlog(){
+    if(inlog.value == "HSO" & pass.value === "altviool2017!"){
+     
+        window.open("./leden.html")
+        window.close("./orkest.html")
+    }else{
+         alert("Helaas de gebruikersnaam of passwoord is niet correct. Voor de juiste inloggevgevens contacteer de dirigent.")
+         leden.style.display = 'none'
+        }
+ console.log(inlog)
+}
 
+function showInlog(){
+    leden.style.display = 'block'
+}
