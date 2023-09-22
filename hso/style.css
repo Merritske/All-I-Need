@@ -1,333 +1,431 @@
 html,
 * {
-    margin: 0;
-    padding: 0;
-    color: #333;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular',
-        'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular',
+    'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 body {
 
-    margin: 0 auto;
-    font-size: 20px;
-    line-height: 150%;
-    /* margin: 10px auto;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 150%;
+  /* margin: 10px auto;
     padding: 10px; */
 
 }
 
 .container {
-    background-color: #f9f9f9;
-    margin: 0 auto;
-    width: 80%;
+  background-color: #f9f9f9;
+  margin: 0 auto;
+  width: 80%;
 }
 
 footer {
-    font-size: 0.8em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #e8e6e6;
+  font-size: 0.8em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e8e6e6;
 }
 
 footer img {
-    width: 3em;
+  width: 3em;
 }
 
 footer .sponsors img {
-    width: 5em;
-    margin: 1.5em;
+  width: 5em;
+  margin: 1.5em;
 }
 
 .sponsors {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header a {
-    text-decoration: none;
-    text-shadow: #333 1px 0px 3px;
+  text-decoration: none;
+  text-shadow: #333 1px 0px 3px;
 }
 
 header a:hover {
-    cursor: pointer;
-    color: blue;
+  cursor: pointer;
+  color: blue;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #e8e6e6;
-    padding: 1.1em;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #e8e6e6;
+  padding: 1.1em;
 }
 
 main {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+text-decoration: none;
 }
 
 header ul {
-    color: white;
-    padding: 0.5em;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.5em;
+  color: white;
+  padding: 0.5em;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5em;
 }
 
-header>ul>li{
+header>ul>li {
   margin-left: 1.5em;
-}  
+}
+
 #logo {
-    height: 50%;
-    margin: 0 2em;
-    box-shadow: 0px 2px 2px #333;
+  height: 50%;
+  margin: 0 2em;
+  box-shadow: 0px 2px 2px #333;
 }
 
 #logo:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 header>ul>li>ul {
-    display: none;
+  display: none;
 }
 
 /* terug tevoorschijn toveren van submenu  */
 .submenu {
-    position: relative;
-    display: inline-block;
-   
+  position: relative;
+  display: inline-block;
+
 }
 
 .submenu-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    text-shadow: none;
-    padding: 0.5em;
-    padding-bottom: 0;
-    z-index: 1;
-    list-style-type: none;
-    font-size: 0.8em;
-    border-radius: 5px;
-    width: max-content;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: none;
+  padding: 0.5em;
+  padding-bottom: 0;
+  z-index: 1;
+  list-style-type: none;
+  font-size: 0.8em;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.topnav .icon {
+  display: none;
 }
 
 .submenu:hover .submenu-content {
-    display: block;
+  display: block;
 }
-.submenu-content a{
-    text-shadow: none;
+
+.submenu-content a {
+  text-shadow: none;
 }
+
 .submenu-content>li {
-    padding-bottom: 1em;
+  padding-bottom: 1em;
 }
-h1{
-    padding: 1.2em 0;
+
+h1 {
+  padding: 1.2em 0;
 }
-h2{
-    padding: 1.1em 2em;
+
+h2 {
+  padding: 1.1em 2em;
 }
+
 /* HOME */
 .intro {
-    width: 85%;
-    margin: 1em auto;
-    text-align: center;
+  width: 85%;
+  margin: 1em auto;
+  text-align: center;
 }
 
 #volgendConcert {
-    font-size: 1em;
-    text-align: center;
-    border: 2px solid #16075d;
-    padding: 1em;
-    border-radius: 1.1em;
-    font-weight: bold;
-    width: 70%;
-    margin: 1em auto;
+  font-size: 1em;
+  text-align: center;
+  border: 2px solid #16075d;
+  padding: 1em;
+  border-radius: 1.1em;
+  font-weight: bold;
+  width: 70%;
+  margin: 1em auto;
 }
 
 .kleineContainer {
-    width: 70%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 1.1em auto;
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1.1em auto;
 }
 
 .affiche {
-    width: 300px;
+  width: 300px;
 }
-.affiche:hover{
-    width: 100%;
+
+.affiche:hover {
+  width: 100%;
 }
 
 .kleineContainer p {
-    padding: 1.1em;
+  padding: 1.1em;
 
 }
 
 .kleineContainer a:hover {
-    cursor: pointer;
-    color: #16075d;
+  cursor: pointer;
+  color: #16075d;
 }
 
 /*CONCERTEN*/
-.concerten{
-    width: 80%;
-    margin: 0 auto;
+.concerten {
+  width: 80%;
+  margin: 0 auto;
 }
-.concerten img{
-    margin: 0 auto;
-}
-.concerten>.kaarten{
-    margin: 0 auto;
-}
-.voorbijContainer{
-    margin: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-justify-content: space-around;
-}
-.voorbijContainer img{
-    width: 20em;
-    margin: 2em;
-    border-radius: 15px;
-}
-.voorbijContainer img:hover{
-    /* transform: scale(1.2); */
-    cursor: pointer;
-}
-#kaarten p{
 
-margin: 1em 8em;
-border-left: 3px solid blue;
-padding-left: 2.5em;
+.concerten img {
+  margin: 0 auto;
+}
+
+.concerten>.kaarten {
+  margin: 0 auto;
+}
+
+.voorbijContainer {
+  margin: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.voorbijContainer img {
+  width: 20em;
+  margin: 2em;
+  border-radius: 15px;
+}
+
+.voorbijContainer img:hover {
+  /* transform: scale(1.2); */
+  cursor: pointer;
+}
+
+#kaarten p {
+
+  margin: 1em 8em;
+  border-left: 3px solid blue;
+  padding-left: 2.5em;
 }
 
 /*Modal*/
 /* The Modal (background) */
 .fotos {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 30px;
-    top: -250px;
-    width: 100%; /* Full width */
-     height: 100%;/* Full height */
-    overflow:auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .fotos {
-    background-color: #fefefe;
-     margin: 15% auto;/* 15% from the top and centered */
-    /* padding: 20px; */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  .fotos h4, .fotos p{
-    margin: 0.8em;
-  }
-  .sfeer img{
-    margin: 0.5em;
-    width: 22em;
-    height: 15em;
-    object-fit: cover;
-  }
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 30px;
+  top: -250px;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
 
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin: 0.3em;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .sfeer{
-display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
-  }
-  .big{
-    transform: scale(2);
-  }
+/* Modal Content/Box */
+.fotos {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  /* padding: 20px; */
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
 
-  /*ORKEST*/
-  .cv{
-    margin: 1em 2em 2.5em 2em;
-  }
-  .cv h3{
-margin-bottom: 0.9em;
-  }
-  .cv p{
-    margin-top: 0.8em;
-  }
-  .leden{
-    display: none;
-    position: absolute;
-    top: 5em;
-    background-color: #b4a7f9;
-    padding: 0.8em;
-  }
-  #leden:hover{
-cursor: pointer;
-color:blue;
-  }
-  form{
+.fotos h4,
+.fotos p {
+  margin: 0.8em;
+}
+
+.sfeer img {
+  margin: 0.5em;
+  width: 22em;
+  height: 15em;
+  object-fit: cover;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0.3em;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sfeer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.big {
+  transform: scale(2);
+}
+
+/*ORKEST*/
+.cv {
+  margin: 1em 2em 2.5em 2em;
+}
+
+.cv h3 {
+  margin-bottom: 0.9em;
+}
+
+.cv p {
+  margin-top: 0.8em;
+}
+
+.leden {
+  display: none;
+  position: absolute;
+  top: 5em;
+  background-color: #b4a7f9;
+  padding: 0.8em;
+}
+
+#leden:hover {
+  cursor: pointer;
+  color: blue;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.8em;
+}
+
+#button {
+  width: max-content;
+  background-color: #333;
+  color: white;
+  font-size: large;
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+#button:hover {
+  background-color: #16075d;
+  cursor: pointer;
+}
+
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #b4a7f9;
+}
+
+th,
+td {
+  padding: 1.2em;
+}
+
+td:first-child {
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+
+/* contact */
+.contact {
+  margin: 2em;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
     display: flex;
-flex-direction: column;
+    flex-direction: row;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+
   }
-   input{
-    padding: 0.8em;
+
+  header ul {
+    display: none;
   }
-  #button{
+
+  .container {
+    width: 100%;
+  }
+
+  .topnav ul li a:not(:first-child) {
+    display: none;
+  }
+
+  .topnav .icon {
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: absolute;
+    left: 0;
+    display: inline;
     width: max-content;
-     background-color: #333;
-    color: white;
-    font-size: large;
-    font-weight:900;
-    border-radius: 5px;
-    padding: 20px;
-  }
-  #button:hover{
-   background-color:#16075d;
-    cursor: pointer;
-  }
- table, th, td{
-    border: 2px solid black;
-    border-collapse: collapse;
-  }
-  th{
-    background-color: #b4a7f9;
-  }
-  th, td{
-    padding: 1.2em;
-  }
-  td:first-child{
-    width: fit-content;
-    box-sizing: border-box;
-  }
- 
-
-  /* contact */
-  .contact{
-    margin: 2em;
+    z-index: 5;
   }
 
+  .topnav.responsive a.icon {
+   display: none;
+  }
+
+  .topnav.responsive ul {
+     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #e8e6e6;
+position: relative;
+left: -20px;
+  }
+.fotos{
+  top: 0;
+}
+}

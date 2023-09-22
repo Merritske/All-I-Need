@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo hso241.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Concerten</title>
 </head>
 
 <body>
 
     <div class="container">
-        <header>
+        <header class="topnav" id="myTopnav">
             <!--logo HSO, ook als favicon zetten-->
             <a href="./index.html">
                 <img id="logo" src="./images/logo hso241.jpg" alt="logo HSO" width="50px">
@@ -58,6 +60,8 @@
                     </a>
                 </li>
             </ul>
+            <a href="javascript:void(0);" class="icon" onclick="navbarresponsive()">
+                <i class="fa fa-bars"></i></a>
         </header>
         <main>
             <div class="concerten">
@@ -69,24 +73,28 @@
                 <h2>Toekomstige concerten.</h2>
                 <!--affiche + aankondigingen van verdere concerten-->
                 <p id="volgendConcert">
-                    FEESTMEDLEY <br>
-                    zaterdag 16 december 2023 <br>
-                    Schaliken, Herentals.</p>
+                  Hou onze website in de gaten.
+                <br>
+            Voorlopig nog geen datum bekend voor ons volgende concert.</p>
 
             </div>
             <div id="kaarten">
                 <h2>Kaarten bestellen.</h2>
-                <p>Alle informatie en bestelling kaarten:<br>
+                <!-- <p>Alle informatie en bestelling kaarten:<br>
                     Telefoon: 03 455 65 68<br>
                     Email: <a href="mailto:info@herentalssymfonischorkest.be">info@herentalssymfonischorkest.be</a><br>
-                    Bankrekening: BE84 9731 8147 9859 (BIC ARSPBE22)</p>
+                    Bankrekening: BE84 9731 8147 9859 (BIC ARSPBE22)</p> -->
+                   <p>
+                     Cultureel Centrum 't Schaliken
+                     <a href="https://www.schaliken.be/programma/feestmedley-te-gast" target="_blank">Bestel je kaarten.</a>
+                   </p>
             </div>
             <!--media hier zetten, stukken die we gespeeld hebben-->
 
             <div id="voorbij">
                 <h2>Vorige concerten.</h2>
                 <h3>
-                    Enkele sfeer beelden van onze afgelopen concerten.
+                    Enkele sfeerbeelden van onze afgelopen concerten.
                 </h3>
                 <div class="voorbijContainer">
                     <!--Trigger/Open The Modal
@@ -102,6 +110,20 @@ Modal content
   </div>
 
 </div>-->
+<div class="concert">
+
+    <img src="./images/affiche 17 09 23.jpg" alt="affiche concert 17/09/23" class="myBtn">
+    <div class=" fotos ">
+        <span class="close">&times;</span>
+        <h4>Aperitiefconcert</h4>
+        <p style="margin-left: 1.8em;">Romance voor viool en orkest van J. Svendsen, soliste: Janien Van de Morkhoven
+            <br> Hoornconcerto nr.3 van W.A. Mozart, solist: Pieter Martens
+            <br>Symfonie nr.5 van F. Schubert
+      </p>
+        <p>17 september 2023 - 11u. - Sint-Niklaaskerk, Morkhoven</p>
+        <img src="./images/repetitie.jpg" alt="">
+    </div>
+</div>
                     <div class="concert">
 
                         <img src="./images/GOLGOTHAflyer.jpg" alt="affiche Golgotha" class="myBtn">
@@ -112,12 +134,12 @@ Modal content
                                 Becker.
                                 <br>Met wereldpremière van het oratorium "Golgotha" van Kristiaan De Becker
                             </p>
-                            <p>19 maart 2023 - 15u. - Sint Waldetrudiskerk, 2200 Herentals</p>
+                            <p>19 maart 2023 - 15u. - Sint-Waldetrudiskerk, 2200 Herentals</p>
                             <img src="./images/repetitie.jpg" alt="">
                         </div>
                     </div>
                     <div class="concert">
-                        <!--WERKT NOG NIET-->
+                   
                         <img src="./images/concert20221203.jpg" alt="affiche soundtracks" class="myBtn">
                         <div class="fotos">
                             <span class="close">&times;</span>

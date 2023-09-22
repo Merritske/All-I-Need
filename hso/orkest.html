@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo hso241.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Het orkest</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
+        <header class="topnav" id="myTopnav">
             <!--logo HSO, ook als favicon zetten-->
             <a href="./index.html">
                 <img id="logo" src="./images/logo hso241.jpg" alt="logo HSO" width="50px">
@@ -51,7 +53,10 @@
                         Contact
                     </a>
                 </li>
+                              
             </ul>
+            <a href="javascript:void(0);" class="icon" onclick="navbarresponsive()">
+                    <i class="fa fa-bars"></i></a>
         </header>
         <main>
                    <img src="./images/repetitie.jpg" width="100%">
@@ -120,7 +125,8 @@
             <h3>Het bestuur</h3>
 <p>Voorzitter: Elly Brouwers<br>
 Ondervoorzitter: Carl Vervoort<br>
-Penningmeester: Marcella De Beuckelaer<br></p>
+Penningmeester: Marcella De Beuckelaer<br>
+Webmaster: An Verbeeck</p>
         </div>
 <div class="leden">
     <h3>Leden</h3>
@@ -128,7 +134,7 @@ Penningmeester: Marcella De Beuckelaer<br></p>
     <br>
     <form action="" >
         <label for="name">Geef de gebruikersnaam:</label>
-        <input type="name" id="HSO">
+        <input type="name" id="hso">
         <br>
         <label for="passwoord">Geef het passwoord:</label>
         <input type="password" name="passwoord" id="altviool2017!">

@@ -59,14 +59,15 @@ for(i=0;i<imgSfeer.length;i++){
 }
 
 //inlog leden
-let inlog = document.getElementById('HSO')
+let inlog = document.getElementById('hso')
 let pass = document.getElementById('altviool2017!')
 let leden = document.querySelector('.leden')
 function openinlog(){
-    if(inlog.value == "HSO" & pass.value === "altviool2017!"){
-     
-        window.open("./leden.html")
+    if(inlog.value == "hso" & pass.value === "altviool2017!"){
+     //   window.open('https://docs.google.com/spreadsheets/d/1XH825qbz6mXjdq4SV7vnS7j384S1TK20f_DSU0zWkP8/edit?usp=sharing')
+      window.open("./leden.html")
         window.close("./orkest.html")
+        leden.style.display ='none'
     }else{
          alert("Helaas de gebruikersnaam of passwoord is niet correct. Voor de juiste inloggevgevens contacteer de dirigent.")
          leden.style.display = 'none'
@@ -76,4 +77,12 @@ function openinlog(){
 
 function showInlog(){
     leden.style.display = 'block'
+}
+function navbarresponsive(){
+    var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
 }
